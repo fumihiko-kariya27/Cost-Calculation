@@ -20,12 +20,7 @@
     		<div>
     			<nav>
     				<ul class="link-box">
-    					<li class="link"><h3><a href="<c:url value='/cost/index' />">TOPページへ</a></h3>
-    						<%
-								if(request.getSession().getAttribute("result") != null){
-									request.getSession().removeAttribute("result");
-								}
-							%>
+    					<li class="link"><h3><a href="<c:url value='/cost/remove' />">TOPページへ</a></h3>
    						<li class="link"><h3><a>確認する</a></h3>
    					</ul>
    				</nav>

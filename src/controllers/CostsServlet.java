@@ -56,7 +56,7 @@ public class CostsServlet extends HttpServlet {
 			request.getSession().setAttribute("remaining", remaining);
 			request.getSession().setAttribute("parcent", parcent);
 
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/cost/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/cost/result.jsp");
 			rd.forward(request, response);
 		}
 
