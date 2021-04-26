@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+html{
+	width: 100%;
+}
 table th{
 	padding: 10px,20px;
 	background: #ababaf;
@@ -28,7 +31,6 @@ table{
 	font-family: serif;
 }
 html, body{
-	width: 900px;
 	heigth: 600px;
 }
 #content{

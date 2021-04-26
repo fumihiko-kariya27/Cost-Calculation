@@ -27,7 +27,7 @@
 			</c:when>
 			<c:otherwise>
 				<div>
-					<h3>人件費進捗予測</h3>
+					<h2>【結果】</h2>
 				</div>
 				<div>
 					<table border="2">
@@ -49,7 +49,7 @@
 				</div><br><br>
 				<h4>人件費の進捗は</h4><h2><strong><c:out value="${parcent}" />%</strong></h2><h4>です</h4><br>
 				<h4>残りの人件費は</h4><h2><c:out value="${remaining}" />円</h2><h4>です。</h4><br>
-				<h5><a href="<c:url value='/cost/save' />">保存する</a></h5>
+				<h3><a href="<c:url value='/cost/save' />">保存する</a></h3>
 				<c:if test="${parcent > 80 && parcent <= 100}">
 					<h4><strong class="warning">【WARNING】使用できる人件費が20％を下回りました</strong></h4>
 				</c:if>
@@ -58,10 +58,5 @@
 				</c:if>
 			</c:otherwise>
 		</c:choose>
-		<%
-			if(request.getSession().getAttribute("result") != null){
-				request.getSession().removeAttribute("result");
-			}
-			%>
 	</c:param>
 </c:import>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Result;
+import models.Cost;
 import utils.DBConnect;
 
 /**
@@ -36,11 +36,11 @@ public class CostSaveServlet extends HttpServlet {
 
 		EntityManager em = DBConnect.createEntityManager();
 
-		double result = (double) request.getSession().getAttribute("result");
-		double remaining = (double) request.getSession().getAttribute("remaining");
+		int result = (int) request.getSession().getAttribute("result");
+		int remaining = (int) request.getSession().getAttribute("remaining");
 		double parcent = (double) request.getSession().getAttribute("parcent");
 
-		Result r = new Result();
+		Cost r = new Cost();
 		r.setRemaining(remaining);
 		r.setResult(result);
 		r.setParcent(parcent);

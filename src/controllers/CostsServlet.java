@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Cost;
+import models.Result;
 
 /**
  * Servlet implementation class CostsServlet
@@ -45,10 +45,10 @@ public class CostsServlet extends HttpServlet {
 			int number_of_people = Integer.parseInt(request.getParameter("number_of_people"));
 
 			// 1日の合計の人件費、残りの予算、進捗を計算する
-			Cost c = new Cost(budget, hourly_wage, time, number_of_people);
-			double result = c.Result();
-			double remaining = budget - result;
-			double parcent = Math.ceil(((result / budget) * 100) * 10) / 10;
+			Result c = new Result(budget, hourly_wage, time, number_of_people);
+			int result = (int) Math.round(c.getResult());
+			int remaining = budget - result;
+			double parcent = Math.ceil((((double) result * 100) / budget) * 10) / 10;
 
 			// スコープにセットし、JSPに処理を飛ばす
 			request.getSession().setAttribute("c", c);

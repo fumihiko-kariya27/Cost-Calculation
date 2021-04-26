@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class DBConnect {
 
-	private static final String PERSISTENCE_UNIT_NAME = "daily_report_system";
+	private static final String PERSISTENCE_UNIT_NAME = "original_portfolio";
 	private static EntityManagerFactory emf;
 
 	public static EntityManager createEntityManager() {

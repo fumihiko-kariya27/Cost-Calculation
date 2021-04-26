@@ -1,63 +1,62 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-
-@Table(name = "cost")
-@NamedQueries({ @NamedQuery(name = "getAllResult", query = "select c from cost as order by c.id desc"),
-		@NamedQuery(name = "getResultCounts", query = "select count(c) from cost as c") })
-
-@Entity
 public class Result {
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 
-	@Column(name = "進捗")
-	private double parcent;
+	private Integer budget;
 
-	@Column(name = "使用人件費")
-	private double result;
+	private Integer hourly_wage;
 
-	@Column(name = "差し引き予算")
-	private double remaining;
+	private Double time;
 
-	public Integer getId() {
-		return id;
+	private Integer number_of_people;
+
+	// コンストラクタの生成
+	public Result() {
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public double getParcent() {
-		return parcent;
-	}
-
-	public void setParcent(double parcent) {
-		this.parcent = parcent;
+	// 引数ありのコンストラクタ
+	public Result(int budget, int hourly_wage, double time, int number_of_people) {
+		this.budget = budget;
+		this.hourly_wage = hourly_wage;
+		this.time = time;
+		this.number_of_people = number_of_people;
 	}
 
 	public double getResult() {
-		return result;
+		double total_cost = hourly_wage * time * number_of_people;
+		return total_cost;
 	}
 
-	public void setResult(double result) {
-		this.result = result;
+	public Integer getBudget() {
+		return budget;
 	}
 
-	public double getRemaining() {
-		return remaining;
+	public void setBudget(Integer budget) {
+		this.budget = budget;
 	}
 
-	public void setRemaining(double remaining) {
-		this.remaining = remaining;
+	public Integer getHourly_wage() {
+		return hourly_wage;
 	}
+
+	public void setHourly_wage(Integer hourly_wage) {
+		this.hourly_wage = hourly_wage;
+	}
+
+	public Double getTime() {
+		return time;
+	}
+
+	public void setTime(double time) {
+		this.time = time;
+	}
+
+	public Integer getNumber_of_people() {
+		return number_of_people;
+	}
+
+	public void setNumber_of_people(Integer number_of_people) {
+		this.number_of_people = number_of_people;
+	}
+
 }

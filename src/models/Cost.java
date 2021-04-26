@@ -1,62 +1,63 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Table(name = "cost")
+@NamedQueries({ @NamedQuery(name = "getAllResult", query = "select r from Cost as r order by r.id desc"),
+		@NamedQuery(name = "getResultCounts", query = "select count(r) from Cost as r") })
+
+@Entity
 public class Cost {
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-	private Integer budget;
+	@Column(name = "進捗")
+	private double parcent;
 
-	private Integer hourly_wage;
+	@Column(name = "使用人件費")
+	private int result;
 
-	private Double time;
+	@Column(name = "差し引き予算")
+	private int remaining;
 
-	private Integer number_of_people;
-
-	// コンストラクタの生成
-	public Cost() {
+	public Integer getId() {
+		return id;
 	}
 
-	// 引数ありのコンストラクタ
-	public Cost(int budget, int hourly_wage, double time, int number_of_people) {
-		this.budget = budget;
-		this.hourly_wage = hourly_wage;
-		this.time = time;
-		this.number_of_people = number_of_people;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public double Result() {
-		double total_cost = hourly_wage * time * number_of_people;
-		return total_cost;
+	public double getParcent() {
+		return parcent;
 	}
 
-	public Integer getBudget() {
-		return budget;
+	public void setParcent(double parcent) {
+		this.parcent = parcent;
 	}
 
-	public void setBudget(Integer budget) {
-		this.budget = budget;
+	public double getResult() {
+		return result;
 	}
 
-	public Integer getHourly_wage() {
-		return hourly_wage;
+	public void setResult(int result) {
+		this.result = result;
 	}
 
-	public void setHourly_wage(Integer hourly_wage) {
-		this.hourly_wage = hourly_wage;
+	public double getRemaining() {
+		return remaining;
 	}
 
-	public Double getTime() {
-		return time;
+	public void setRemaining(int remaining) {
+		this.remaining = remaining;
 	}
-
-	public void setTime(double time2) {
-		this.time = time2;
-	}
-
-	public Integer getNumber_of_people() {
-		return number_of_people;
-	}
-
-	public void setNumber_of_people(Integer number_of_people) {
-		this.number_of_people = number_of_people;
-	}
-
 }
