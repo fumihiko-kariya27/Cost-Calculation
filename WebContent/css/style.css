@@ -6,12 +6,18 @@ html{
 table th{
 	padding: 10px,20px;
 	background: #ababaf;
+	font-family: 'TsukuARdGothic-Regular',sans-serif;
+	font-size: 24px;
 }
 table td{
 	padding: 3px, 20px;
+	font-size: 28px;
 }
 table{
 	border-color: #000;
+}
+#nav{
+	border-bottom: 1px solid #ccc;
 }
 .link{
 	margin: 5px, 20px
@@ -28,23 +34,23 @@ table{
 	heigth: 20%;
 	font-size: 1.3rem;
 	text-align: center;
-	font-family: serif;
+	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
 }
 html, body{
 	heigth: 600px;
 }
 #content{
 	width: 100%;
-    height: 70%x;
+    height: 60%x;
     text-align: center;
-    font-family: serif;
+    font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
     background-image: url(WebContent/image-photo.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 #footer{
 	width: 100%;
-    height: 10%;
+    height: 20%;
     text-align: center;
     color: #fff;
     background-color: #8b0304;
@@ -75,4 +81,18 @@ th {
 td {
 	width: 66%;
 	padding: 10px 2%;
+}
+.container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 50% 50%;
+	gap: 0%;
+}
+.item > p{
+	font-family: 'Futura',sans-serif;
+	font-size: 60px;
+	color: #d42215;
+}
+.item > h3{
+	font-size: 1.7rem;
 }

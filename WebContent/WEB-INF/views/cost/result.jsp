@@ -23,14 +23,22 @@
 				</tr>
 			</table>
 		</div><br><br>
-		<h4>人件費の進捗は</h4><h2><strong><c:out value="${parcent}" />%</strong></h2><h4>です</h4><br>
-		<h4>残りの人件費は</h4><h2><c:out value="${remaining}" />円</h2><h4>です。</h4><br>
-		<h3><a href="<c:url value='/cost/save' />">保存する</a></h3>
+		<div class="container">
+			<div class="item">
+				<h3>予算に対して</h3>
+				<p><c:out value="${parcent}"/>％</p>
+			</div>
+			<div class="item">
+				<h3>差し引き</h3>
+				<p><c:out value="${remaining}" />円</p>
+			</div>
+		</div>
 		<c:if test="${parcent > 80 && parcent <= 100}">
 			<h4><strong class="warning">【WARNING】使用できる人件費が20％を下回りました</strong></h4>
 		</c:if>
 		<c:if test="${parcent > 100}">
 			<h4><strong class="warning">【WARNING】使用金額が予算を超えています</strong></h4>
 		</c:if>
+		<br>
 	</c:param>
 </c:import>

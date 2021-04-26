@@ -18,10 +18,13 @@
     	<div id="content">
     		${param.content}
     		<div>
-    			<nav>
+    			<nav id="nav">
     				<ul class="link-box">
     					<li class="link"><h3><a href="<c:url value='/cost/remove' />">TOPページへ</a></h3>
    						<li class="link"><h3><a>確認する</a></h3>
+   						<c:if test="${result != null}">
+   							<li class="link"><h3><a href="<c:url value='/cost/save' />">保存する</a></h3>
+   						</c:if>
    					</ul>
    				</nav>
    			</div>

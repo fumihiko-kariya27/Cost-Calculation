@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/layout.jsp">
 	<c:param name="content">
-		<div class="container">
-    		<div class="item">
+		<div>
+    		<div>
     			<h2>該当項目を入力してください</h2>
     			<form method="GET" action="<c:url value='/cost/index' />">
     				<h3>予算</h3>
