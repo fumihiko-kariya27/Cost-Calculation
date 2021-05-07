@@ -9,23 +9,23 @@
 			<table border="2">
 				<tr>
 					<th>予算</th>
-					<th>使用する金額</th>
+					<th>使用する合計額</th>
 					<th>出勤人数</th>
 					<th>時給</th>
 					<th>勤務時間</th>
 				</tr>
 				<tr>
-					<td><c:out value="${c.budget}" /></td>
+					<td><c:out value="${r.budget}" /></td>
 					<td><c:out value="${result}" /></td>
-					<td><c:out value="${c.number_of_people}" /></td>
-					<td><c:out value="${c.hourly_wage}" /></td>
-					<td><c:out value="${c.time}" /></td>
+					<td><c:out value="${r.number_of_people}" /></td>
+					<td><c:out value="${r.hourly_wage}" /></td>
+					<td><c:out value="${r.time}" /></td>
 				</tr>
 			</table>
 		</div><br><br>
 		<div class="container">
 			<div class="item">
-				<h3>予算に対して</h3>
+				<h3>予算に対して使用金額は</h3>
 				<p><c:out value="${parcent}"/>％</p>
 			</div>
 			<div class="item">

@@ -30,6 +30,9 @@ public class CostRemoveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		if (request.getSession().getAttribute("r") != null) {
+			request.getSession().removeAttribute("r");
+		}
 		if (request.getSession().getAttribute("c") != null) {
 			request.getSession().removeAttribute("c");
 		}

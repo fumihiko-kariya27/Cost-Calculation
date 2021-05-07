@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,18 +18,21 @@ import javax.persistence.Table;
 @Entity
 public class Cost {
 	@Id
-	@Column(name = "id")
+	@Column(name = "id", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "進捗")
+	@Column(name = "進捗", nullable = false)
 	private double parcent;
 
-	@Column(name = "使用人件費")
+	@Column(name = "使用人件費", nullable = false)
 	private int result;
 
-	@Column(name = "差し引き予算")
+	@Column(name = "差し引き予算", nullable = false)
 	private int remaining;
+
+	@Column(name = "登録日", nullable = false)
+	private Date date;
 
 	public Integer getId() {
 		return id;
@@ -59,5 +64,13 @@ public class Cost {
 
 	public void setRemaining(int remaining) {
 		this.remaining = remaining;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

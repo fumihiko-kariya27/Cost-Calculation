@@ -45,13 +45,13 @@ public class CostsServlet extends HttpServlet {
 			int number_of_people = Integer.parseInt(request.getParameter("number_of_people"));
 
 			// 1日の合計の人件費、残りの予算、進捗を計算する
-			Result c = new Result(budget, hourly_wage, time, number_of_people);
-			int result = (int) Math.round(c.getResult());
+			Result r = new Result(budget, hourly_wage, time, number_of_people);
+			int result = (int) Math.round(r.getResult());
 			int remaining = budget - result;
 			double parcent = Math.ceil((((double) result * 100) / budget) * 10) / 10;
 
 			// スコープにセットし、JSPに処理を飛ばす
-			request.getSession().setAttribute("c", c);
+			request.getSession().setAttribute("r", r);
 			request.getSession().setAttribute("result", result);
 			request.getSession().setAttribute("remaining", remaining);
 			request.getSession().setAttribute("parcent", parcent);

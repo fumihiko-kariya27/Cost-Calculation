@@ -22,6 +22,7 @@ public class Result {
 		this.number_of_people = number_of_people;
 	}
 
+	//1日の合計でかかる人件費を計算するメソッド
 	public double getResult() {
 		double total_cost = hourly_wage * time * number_of_people;
 		return total_cost;
